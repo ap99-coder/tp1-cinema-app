@@ -1,15 +1,21 @@
 import { Stack } from 'expo-router';
+import { ThemeProvider, useTheme } from '../contexts/ThemeContext';
 
-export default function Layout() {
+function RootLayoutNav() {
+  const { theme } = useTheme();
+
   return (
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#1a1a2e',
+          backgroundColor: theme.headerBg,
         },
-        headerTintColor: '#fff',
+        headerTintColor: theme.headerText,
         headerTitleStyle: {
           fontWeight: 'bold',
+        },
+        contentStyle: {
+          backgroundColor: theme.background,
         },
       }}
     >
@@ -22,13 +28,21 @@ export default function Layout() {
         options={{ title: 'Book Tickets' }} 
       />
       <Stack.Screen 
-        name="movies/index" 
-        options={{ title: 'Now Showing' }} 
+        name="api-movies/index" 
+        options={{ title: 'Popular Movies' }} 
       />
       <Stack.Screen 
-        name="movies/[id]" 
-        options={{ title: 'Movie Details' }} 
+        name="api-movies/[id]" 
+        options={{ title: 'Movie Info' }} 
       />
     </Stack>
+  );
+}
+
+export default function Layout() {
+  return (
+    <ThemeProvider>
+      <RootLayoutNav />
+    </ThemeProvider>
   );
 }
