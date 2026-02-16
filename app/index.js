@@ -36,7 +36,10 @@ export default function HomeScreen() {
           onPress={() => router.push('/form')}
           secondary
         />
-        
+        <AppButton 
+          title="Movie Reviews" 
+          onPress={() => router.push('/reviews')}
+        />
         <View style={styles.themeToggle}>
           <ThemeToggle />
         </View>

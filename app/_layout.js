@@ -35,6 +35,22 @@ function RootLayoutNav() {
         name="api-movies/[id]" 
         options={{ title: 'Movie Info' }} 
       />
+      <Stack.Screen 
+        name="reviews/index" 
+        options={{ title: 'Movie Reviews' }} 
+      />
+      <Stack.Screen 
+        name="reviews/[id]" 
+        options={{ title: 'Review Detail' }} 
+      />
+      <Stack.Screen 
+        name="reviews/create" 
+        options={{ title: 'Add Review' }} 
+      />
+      <Stack.Screen 
+        name="reviews/edit/[id]" 
+        options={{ title: 'Edit Review' }} 
+      />
     </Stack>
   );
 }

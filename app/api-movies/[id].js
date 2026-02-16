@@ -109,6 +109,17 @@ export default function ApiMovieDetailScreen() {
             <AppText style={styles.description}>{movie.overview}</AppText>
           </View>
 
+           {}
+          <AppButton
+            title="✍️ Write a Review"
+            onPress={() =>
+              router.push({
+                pathname: '/reviews/create',
+                params: { prefill_title: movie.title },
+              })
+            }
+          />
+
           <AppButton
             title="Book Tickets"
             onPress={() => router.push('/form')}
